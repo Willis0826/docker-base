@@ -1,6 +1,6 @@
 # Usage
 
-The Dockerfile provide a Flask app running environment with python 3.7-slim.
+The Dockerfile provide a Flask app running environment with python 3.7.
 
 1. docker build .
 
@@ -10,4 +10,4 @@ The Dockerfile provide a Flask app running environment with python 3.7-slim.
 
 ## Docker Image
 
-willischou/python-flask:0.1
+willischou/python-flask:0.2
