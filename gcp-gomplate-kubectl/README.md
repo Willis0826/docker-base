@@ -8,4 +8,4 @@ The Dockerfile provide a CI/CD running environment with kubectl & gomplate & gcl
 
 ## Docker Image
 
-willischou/gcp-gomplate-kubectl:0.1
+willischou/gcp-gomplate-kubectl:0.3
