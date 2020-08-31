@@ -13,6 +13,10 @@ RUN git clone https://github.com/AGWA/git-crypt.git \
     && cd git-crypt \
     && make \
     && make install PREFIX=/usr/local
+# aliyun cli v3.0.14
+RUN curl -L -O https://github.com/aliyun/aliyun-cli/releases/download/v3.0.14/aliyun-cli-linux-amd64.tar.gz \
+    && tar zxvf aliyun-cli-linux-amd64.tar.gz \
+    && sudo mv aliyun /usr/local/bin/aliyun
 
 FROM seitk/pipeline-eks
 # git crypt require duplicity (gpg)
@@ -20,3 +24,4 @@ RUN apk add duplicity
 COPY --from=builder /usr/local/bin/gomplate /usr/local/bin/gomplate
 COPY --from=builder /usr/local/bin/helm3 /usr/local/bin/helm3
 COPY --from=builder /usr/local/bin/git-crypt /usr/local/bin/git-crypt
+COPY --from=builder /usr/local/bin/aliyun /usr/local/bin/aliyun
