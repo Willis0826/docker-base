@@ -17,7 +17,9 @@ RUN git clone https://github.com/AGWA/git-crypt.git \
 RUN curl -L -O https://github.com/aliyun/aliyun-cli/releases/download/v3.0.14/aliyun-cli-linux-amd64.tar.gz \
     && tar zxvf aliyun-cli-linux-amd64.tar.gz \
     && sudo mv aliyun /usr/local/bin/aliyun
-
+# # terraform 0.12.25
+RUN curl -L -O https://releases.hashicorp.com/terraform/0.12.25/terraform_0.12.25_linux_amd64.zip \
+    &&  unzip terraform_0.12.25_linux_amd64.zip -d /usr/local/bin
 FROM seitk/pipeline-eks
 # git crypt require duplicity (gpg)
 RUN apk add duplicity
@@ -25,3 +27,4 @@ COPY --from=builder /usr/local/bin/gomplate /usr/local/bin/gomplate
 COPY --from=builder /usr/local/bin/helm3 /usr/local/bin/helm3
 COPY --from=builder /usr/local/bin/git-crypt /usr/local/bin/git-crypt
 COPY --from=builder /usr/local/bin/aliyun /usr/local/bin/aliyun
+COPY --from=builder /usr/local/bin/terraform /usr/local/bin/terraform
