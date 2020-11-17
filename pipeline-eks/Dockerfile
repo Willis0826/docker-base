@@ -22,7 +22,7 @@ RUN curl -L -O https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_
     &&  unzip terraform_0.13.2_linux_amd64.zip -d /usr/local/bin
 FROM seitk/pipeline-eks
 # git crypt require duplicity (gpg)
-RUN apk add duplicity
+RUN apk add duplicity zip
 COPY --from=builder /usr/local/bin/gomplate /usr/local/bin/gomplate
 COPY --from=builder /usr/local/bin/helm3 /usr/local/bin/helm3
 COPY --from=builder /usr/local/bin/git-crypt /usr/local/bin/git-crypt
