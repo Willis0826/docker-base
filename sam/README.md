@@ -1,6 +1,7 @@
 # Usage
 
 The Dockerfile provide a AWS SAM cli to build and deploy the aws application.
+Also, the the image includes nodejs 14 runtime
 
 1. docker build -t <docker_hub>/sam:<image_tag> .
 
