@@ -9,4 +9,4 @@ Also, the the image includes nodejs 14 runtime
 
 ## Docker Image
 
-willischou/sam:0.1
+willischou/sam:release-0.3.0
