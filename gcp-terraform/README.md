@@ -10,4 +10,4 @@ The Dockerfile provide a CI/CD running environment with terraform & gcloud cli. 
 
 ## Docker Image
 
-willischou/gcp-terraform:0.5
+willischou/gcp-terraform:1.0.0
