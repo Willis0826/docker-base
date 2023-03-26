@@ -1,11 +1,19 @@
 # Usage
 
-The Dockerfile provide a AWS SAM cli to build and deploy the aws application.
-Also, the the image includes nodejs 14 runtime
+The Dockerfile provide a AWS SAM CLI to build and deploy AWS serverless application.
+Also, this image includes nodejs 18 runtime and typescript.
 
-1. docker build -t <docker_hub>/sam:<image_tag> .
+Build AMD64:
 
-2. docker push <docker_hub>/sam:<image_tag>
+1. docker buildx build --load --platform=linux/amd64 -t willischou/sam:release-0.4.0 .
+
+2. docker push willischou/sam:release-0.4.0
+
+Build ARM64:
+
+1. docker buildx build --load --platform=linux/arm64 -t willischou/sam:release-0.4.0 .
+
+2. docker push willischou/sam:release-0.4.0
 
 ## Docker Image
 
